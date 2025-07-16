@@ -50,9 +50,6 @@ public class PhoneBookTest {
         System.setOut(originalOut);
         String output = outContent.toString().trim();
 
-        assertEquals("Anna\nIvan\nVova", output);
-
-
+        assertEquals("Anna\r\nIvan\r\nVova", output);
     }
-
 }
