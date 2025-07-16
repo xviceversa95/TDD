@@ -32,6 +32,16 @@ public class PhoneBookTest {
         assertEquals(expected, testBook.findByName("Anna"));
     }
 
+    @Test
+    public void testPrintAllNames() {
+        PhoneBook testBook = new PhoneBook();
+        testBook.add("Anna", 555555);
+        testBook.add("Tatiana", 200200);
+        testBook.add("Larry", 100000);
 
+        String expected = "Anna\nLarry\nTatiana";
+
+        assertEquals(expected, testBook.printAllNames());
+    }
 
 }
