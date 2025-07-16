@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PhoneBookTest {
@@ -36,12 +39,20 @@ public class PhoneBookTest {
     public void testPrintAllNames() {
         PhoneBook testBook = new PhoneBook();
         testBook.add("Anna", 555555);
-        testBook.add("Tatiana", 200200);
-        testBook.add("Larry", 100000);
+        testBook.add("Vova", 6767677);
+        testBook.add("Ivan", 6767345);
 
-        String expected = "Anna\nLarry\nTatiana";
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outContent));
 
-        assertEquals(expected, testBook.printAllNames());
+        testBook.printAllNames();
+        System.setOut(originalOut);
+        String output = outContent.toString().trim();
+
+        assertEquals("Anna\nIvan\nVova", output);
+
+
     }
 
 }
