@@ -19,4 +19,8 @@ public class PhoneBook {
         }
         return null;
     }
+
+    public static Integer findByName(String name) {
+        return null;
+    }
 }

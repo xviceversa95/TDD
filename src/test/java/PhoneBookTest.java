@@ -22,5 +22,16 @@ public class PhoneBookTest {
         assertEquals(expected, testBook.findByNumber(555555));
     }
 
+    @Test
+    public void testFindByName() {
+        PhoneBook testBook = new PhoneBook();
+        testBook.add("Anna", 555555);
+
+        Integer expected = 555555;
+
+        assertEquals(expected, testBook.findByName("Anna"));
+    }
+
     
+
 }
