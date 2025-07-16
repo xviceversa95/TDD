@@ -32,6 +32,6 @@ public class PhoneBookTest {
         assertEquals(expected, testBook.findByName("Anna"));
     }
 
-    
+
 
 }
